@@ -3,69 +3,149 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sho 翔</title>
-    <!-- Load Tailwind CSS for modern, responsive styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Configure Tailwind to use the Inter font family
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
+    <!-- 
+        All styling is now embedded directly in this file 
+        to ensure it works even without an internet connection.
+    -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        :root {
+            --primary-blue: #1d4ed8; /* Equivalent to Tailwind blue-700 */
+            --light-blue: #bfdbfe;   /* Equivalent to Tailwind blue-100 */
+            --gray-text: #4b5563;    /* Equivalent to Tailwind gray-600 */
+            --light-gray: #f3f4f6;   /* Equivalent to Tailwind gray-100 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-gray);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top instead of center vertically */
+            padding: 1.5rem;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .content-card {
+            max-width: 48rem; /* Equivalent to max-w-2xl */
+            width: 100%;
+            background-color: white;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* Shadow-2xl */
+            border-radius: 0.75rem; /* Rounded-xl */
+            text-align: center; /* Ensures all text is centered */
+        }
+        
+        .content-card > * {
+            margin-bottom: 1.5rem; /* Space between elements */
+        }
+        
+        h1 {
+            font-size: 2.5rem; /* text-4xl */
+            line-height: 1.2;
+            font-weight: 800; /* font-extrabold */
+            color: var(--primary-blue);
+        }
+
+        h2 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* gray-800 */
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 0.5rem;
+            padding-top: 1rem;
+        }
+        
+        p {
+            color: var(--gray-text);
+            line-height: 1.6;
+            font-size: 1.125rem; /* text-lg */
+            margin: 0.5rem 0;
+        }
+
+        p.italic-interest {
+            font-style: italic;
+            font-size: 1rem; /* text-base */
+            color: #6b7280; /* gray-500 */
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid var(--light-blue);
+            width: 6rem; /* w-24 */
+            margin: 1.5rem auto;
+        }
+
+        a {
+            color: var(--primary-blue);
+            text-decoration: underline;
+            font-weight: 500;
+            transition: color 0.15s ease-in-out;
+        }
+
+        a:hover {
+            color: #1e40af; /* A slightly darker blue for hover */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 640px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.25rem;
             }
         }
-    </script>
+    </style>
 </head>
-<!--
-    The 'text-center' class is added to the main content wrapper (the <div>)
-    This centers all text within that container.
-    The 'flex justify-center' on the body centers the entire block on the page.
--->
-<body class="bg-gray-100 flex justify-center p-4 min-h-screen font-sans">
-    <!-- Main content card with max width, centering, and professional styling -->
-    <div class="w-full max-w-2xl bg-white p-8 md:p-12 shadow-2xl rounded-xl space-y-6 text-center">
+<body>
+    <!-- Main content card -->
+    <div class="content-card">
         
         <!-- Header Section -->
-        <h1 class="text-4xl font-extrabold text-blue-700 sm:text-5xl">
+        <h1>
             Hi, my name is Sho Takeshita (竹下翔)
         </h1>
-        <hr class="my-6 border-blue-200 w-24 mx-auto" />
+        <hr />
 
         <!-- About Section -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2">
+        <h2>
             About
         </h2>
-        <p class="text-gray-600 leading-relaxed text-lg">
+        <p>
             I am an aspiring computational biologist majoring in computer science and biology at the University of Maryland, College Park looking to apply to graduate programs this fall.
         </p>
-        <p class="text-gray-500 leading-relaxed italic text-base">
+        <p class="italic-interest">
             Interests: applying computer science concepts such as machine learning and data science to study protein interactions, structures, and folding
         </p>
 
         <!-- Resume Section -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2 pt-4">Resume</h2>
-        <p class="text-gray-600 text-lg">
+        <h2>Resume</h2>
+        <p>
             Here is my 
-            <a href="sho_takeshita_resume.pdf" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150">
+            <a href="sho_takeshita_resume.pdf">
                 resume
             </a> 
             as of 7/26/23
         </p>
 
         <!-- Contact Section -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2 pt-4">
+        <h2>
             Contact
         </h2>
-        <p class="text-gray-600 text-lg">
+        <p>
             Email: 
-            <a href="mailto:stakeshi+personalweb@terpmail.umd.edu" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150">
+            <a href="mailto:stakeshi+personalweb@terpmail.umd.edu">
                 stakeshi@umd.edu
             </a>
         </p>
         <p>
-            <a href="https://www.linkedin.com/in/stakeshi/" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150 text-lg">
+            <a href="https://www.linkedin.com/in/stakeshi/">
                 LinkedIn
             </a>
         </p>
