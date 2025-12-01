@@ -1,28 +1,74 @@
-<html>
-    <head><title>Sho 翔</title> </head>
-<body style="margin: 0px auto; max-width:900px;">
-    <h1 class="centered-content">Hi, my name is Sho Takeshita (竹下翔)</h1>
-    <h2 class="centered-content">
-        About
-    </h2>
-    <p class="centered-content">
-        I am an aspiring computational biologist majoring in computer science and biology at the University of Maryland, College Park looking to apply to graduate programs this fall.
-    </p>
-    <p class="centered-content">
-        Interests: applying computer science concepts such as machine learning and data science to study protein interactions, structures, and folding
-    </p>
-    <h2 class="centered-content">Resume</h2>
-    <p class="centered-content">
-        Here is my <a href="sho_takeshita_resume.pdf">resume</a> as of 7/26/23
-    </p>
-    <h2 class="centered-content">
-        Contact
-    </h2>
-    <p class="centered-content">
-        Email: <a href="mailto: stakeshi+personalweb@terpmail.umd.edu">stakeshi@umd.edu</a>
-    </p>
-    <p class="centered-content">
-        <a href="https://www.linkedin.com/in/stakeshi/">LinkedIn</a>
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sho 翔</title>
+    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind to use the Inter font family
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<!--
+    The 'text-center' class is added to the main content wrapper (the <div>)
+    This centers all text within that container.
+    The 'flex justify-center' on the body centers the entire block on the page.
+-->
+<body class="bg-gray-100 flex justify-center p-4 min-h-screen font-sans">
+    <!-- Main content card with max width, centering, and professional styling -->
+    <div class="w-full max-w-2xl bg-white p-8 md:p-12 shadow-2xl rounded-xl space-y-6 text-center">
+        
+        <!-- Header Section -->
+        <h1 class="text-4xl font-extrabold text-blue-700 sm:text-5xl">
+            Hi, my name is Sho Takeshita (竹下翔)
+        </h1>
+        <hr class="my-6 border-blue-200 w-24 mx-auto" />
+
+        <!-- About Section -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2">
+            About
+        </h2>
+        <p class="text-gray-600 leading-relaxed text-lg">
+            I am an aspiring computational biologist majoring in computer science and biology at the University of Maryland, College Park looking to apply to graduate programs this fall.
+        </p>
+        <p class="text-gray-500 leading-relaxed italic text-base">
+            Interests: applying computer science concepts such as machine learning and data science to study protein interactions, structures, and folding
+        </p>
+
+        <!-- Resume Section -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2 pt-4">Resume</h2>
+        <p class="text-gray-600 text-lg">
+            Here is my 
+            <a href="sho_takeshita_resume.pdf" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150">
+                resume
+            </a> 
+            as of 7/26/23
+        </p>
+
+        <!-- Contact Section -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-blue-100 pb-2 pt-4">
+            Contact
+        </h2>
+        <p class="text-gray-600 text-lg">
+            Email: 
+            <a href="mailto:stakeshi+personalweb@terpmail.umd.edu" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150">
+                stakeshi@umd.edu
+            </a>
+        </p>
+        <p>
+            <a href="https://www.linkedin.com/in/stakeshi/" class="text-blue-600 hover:text-blue-800 font-medium underline transition duration-150 text-lg">
+                LinkedIn
+            </a>
+        </p>
+    </div>
 </body>
 </html>
